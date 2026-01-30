@@ -1,220 +1,202 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Evil Saucefy10 Wiki</title>
+    <meta charset="UTF-8">
+    <title>Evil Saucefy10 Wiki - Home</title>
 
-<style>
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        body {
+            background-color: #000;
+            color: #ddd;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 11px;
+            margin: 0;
+            padding: 0;
+        }
 
-body {
-    background: #2b1a00;
-    color: #d6d6d6;
-    font-family: Verdana, Arial, sans-serif;
-    font-size: 11px;
-}
+        /* HEADER COM IMAGEM */
+        .ng-header {
+            background:
+                linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("images/header.png") center / cover no-repeat;
+            border-bottom: 2px solid #555;
+            padding: 20px 0;
+            text-align: center;
+        }
 
-/* FRAME CENTRAL */
-.site-frame {
-    width: 960px;
-    margin: 30px auto;
-    background: #0b0b0b;
-    border: 3px solid #3a3a3a;
-    box-shadow: 0 0 25px #000;
-}
+        .container {
+            width: 900px;
+            margin: 0 auto;
+            background-color: #000;
+            border-left: 1px solid #444;
+            border-right: 1px solid #444;
+            padding: 10px;
+            min-height: 100vh;
+        }
 
-/* HEADER */
-.header {
-    background: linear-gradient(#1b1b1b, #0e0e0e);
-    border-bottom: 2px solid #444;
-    padding: 10px;
-}
+        .logo {
+            font-family: Impact, sans-serif;
+            font-size: 40px;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px #000;
+            margin-bottom: 10px;
+        }
 
-.logo {
-    font-family: Impact, Arial Black, sans-serif;
-    font-size: 38px;
-    color: #f2f2f2;
-}
+        nav {
+            background: #222;
+            padding: 5px;
+            margin-bottom: 15px;
+        }
 
-/* NAVBAR NEWGROUNDS */
-.navbar {
-    background: linear-gradient(#2a2a2a, #141414);
-    border-top: 1px solid #444;
-    border-bottom: 1px solid #000;
-    padding: 0 6px;
-}
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 15px;
+            background: #333;
+            border: 1px solid #555;
+            margin-right: 2px;
+        }
 
-.navbar a {
-    display: inline-block;
-    padding: 8px 18px;
-    font-size: 14px;
-    font-weight: bold;
-    font-family: Arial Black, Verdana, sans-serif;
-    color: #fff;
-    text-decoration: none;
-    border-right: 1px solid #333;
-    text-shadow: 1px 1px #000;
-}
+        nav a:hover {
+            background: #fff;
+            color: #000;
+        }
 
-.navbar a:hover {
-    background: linear-gradient(#f7b733, #e08b00);
-    color: #000;
-    text-shadow: none;
-}
+        .main-content {
+            display: flex;
+            gap: 15px;
+        }
 
-/* CONTENT */
-.content {
-    display: flex;
-    gap: 10px;
-    padding: 10px;
-}
+        .left-col { flex: 2; }
+        .sidebar { flex: 1; }
 
-.main {
-    width: 650px;
-}
+        .content-box {
+            background: #111;
+            border: 1px solid #444;
+            margin-bottom: 15px;
+        }
 
-.sidebar {
-    width: 280px;
-}
+        .box-title {
+            background: #222;
+            color: #fff;
+            padding: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #444;
+        }
 
-/* BOX */
-.box {
-    background: #141414;
-    border: 1px solid #333;
-    margin-bottom: 10px;
-}
+        .box-body { padding: 10px; }
 
-.box-title {
-    background: #202020;
-    padding: 5px 8px;
-    font-weight: bold;
-    color: #fff;
-    border-bottom: 1px solid #333;
-    text-transform: uppercase;
-}
+        .roblox-play-area {
+            background: #111;
+            border: 2px solid #fff;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
 
-.box-body {
-    padding: 8px;
-}
+        .play-title {
+            font-size: 18px;
+            color: #fff;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
 
-/* PLAY BOX */
-.play-box {
-    background: #0f0f0f;
-    border: 2px solid #f7b733;
-    text-align: center;
-    padding: 15px;
-}
+        .roblox-link {
+            display: inline-block;
+            background: #fff;
+            color: #000;
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 3px;
+        }
 
-.play-box h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
+        .roblox-link:hover {
+            background: #ccc;
+        }
 
-.play-box a {
-    display: inline-block;
-    background: #f7b733;
-    color: #000;
-    padding: 8px 20px;
-    font-weight: bold;
-    text-decoration: none;
-}
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 10px;
+            color: #888;
+            border-top: 1px solid #444;
+        }
 
-.play-box a:hover {
-    background: #ffd266;
-}
-
-/* LINKS */
-a {
-    color: #f7b733;
-}
-
-ul {
-    margin-left: 18px;
-}
-
-/* FOOTER */
-.footer {
-    border-top: 1px solid #333;
-    padding: 10px;
-    text-align: center;
-    font-size: 10px;
-    color: #777;
-}
-</style>
+        h2 { color: #fff; margin-top: 0; }
+        p { line-height: 1.4; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+        a { color: #fff; }
+    </style>
 </head>
 
 <body>
 
-<div class="site-frame">
-
-    <div class="header">
+    <div class="ng-header">
         <div class="logo">EVIL SAUCEFY10 WIKI</div>
     </div>
 
-    <div class="navbar">
-        <a href="#">HOME</a>
-        <a href="#">CHARACTERS</a>
-        <a href="#">MUSIC</a>
-        <a href="#">MISC</a>
-    </div>
+    <div class="container">
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#">CHARACTERS</a>
+            <a href="#">MUSIC</a>
+            <a href="#">MISC</a>
+        </nav>
 
-    <div class="content">
+        <div class="main-content">
+            <div class="left-col">
 
-        <div class="main">
+                <div class="roblox-play-area">
+                    <div class="play-title">PLAY THE GAME:</div>
+                    <a href="COLOQUE_SEU_LINK_AQUI" class="roblox-link" target="_blank">
+                        ROBLOX LINK TO THE GAME
+                    </a>
+                </div>
 
-            <div class="box play-box">
-                <h2>PLAY THE GAME</h2>
-                <a href="COLOQUE_SEU_LINK_AQUI" target="_blank">
-                    ROBLOX GAME LINK
-                </a>
-            </div>
+                <div class="content-box">
+                    <div class="box-title">About Evil Saucefy10</div>
+                    <div class="box-body">
+                        <h2>Welcome to the Wiki</h2>
+                        <p>
+                            This is the official wiki for Evil Saucefy10 by AzureWraths00.
+                            The game is based on the Roblox developer Saucefy10
+                            (creator of Outlaws of Robloxia and Die of Death).
+                        </p>
+                    </div>
+                </div>
 
-            <div class="box">
-                <div class="box-title">About Evil Saucefy10</div>
-                <div class="box-body">
-                    <p>
-                        This is the official wiki for Evil Saucefy10 by AzureWraths00.
-                        The game is based on the Roblox developer Saucefy10,
-                        creator of Outlaws of Robloxia and Die of Death.
-                    </p>
+                <div class="content-box">
+                    <div class="box-title">Latest Updates</div>
+                    <div class="box-body">
+                        <ul></ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="box">
-                <div class="box-title">Latest Updates</div>
-                <div class="box-body">
-                    <ul>
-                        <li>No updates yet.</li>
-                    </ul>
+            <div class="sidebar">
+                <div class="content-box">
+                    <div class="box-title">Navigation Quicklinks</div>
+                    <div class="box-body">
+                        <p>> <a href="#">Main Page</a></p>
+                        <p>> <a href="#">Recent Changes</a></p>
+                        <p>> <a href="#">Random Character</a></p>
+                    </div>
                 </div>
             </div>
-
         </div>
 
-        <div class="sidebar">
-            <div class="box">
-                <div class="box-title">Navigation</div>
-                <div class="box-body">
-                    <p>> <a href="#">Main Page</a></p>
-                    <p>> <a href="#">Recent Changes</a></p>
-                    <p>> <a href="#">Random Character</a></p>
-                </div>
-            </div>
+        <div class="footer">
+            It's evil! <br>
+            &copy; Evil Saucefy10 Wiki
         </div>
-
     </div>
-
-    <div class="footer">
-        It's evil!<br>
-        © Evil Saucefy10 Wiki
-    </div>
-
-</div>
 
 </body>
 </html>
