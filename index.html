@@ -13,21 +13,25 @@
 }
 
 body {
-    background: #0b0b0b;
+    background: #2b1a00; /* fundo fora do quadrado */
     color: #d6d6d6;
     font-family: Verdana, Arial, sans-serif;
     font-size: 11px;
 }
 
+/* QUADRADO CENTRAL */
+.site-frame {
+    width: 960px;
+    margin: 30px auto;
+    background: #0b0b0b;
+    border: 3px solid #3a3a3a;
+    box-shadow: 0 0 25px #000;
+}
+
 /* HEADER */
 .header {
     background: linear-gradient(#1b1b1b, #0e0e0e);
-    border-bottom: 3px solid #3a3a3a;
-}
-
-.header-inner {
-    width: 960px;
-    margin: auto;
+    border-bottom: 2px solid #444;
     padding: 10px;
 }
 
@@ -35,22 +39,16 @@ body {
     font-family: Impact, Arial Black, sans-serif;
     font-size: 38px;
     color: #f2f2f2;
-    letter-spacing: -1px;
 }
 
-/* NAV BAR */
+/* NAVBAR */
 .navbar {
     background: #1a1a1a;
     border-top: 1px solid #333;
     border-bottom: 1px solid #333;
 }
 
-.nav-inner {
-    width: 960px;
-    margin: auto;
-}
-
-.nav-inner a {
+.navbar a {
     display: inline-block;
     padding: 6px 14px;
     color: #fff;
@@ -59,31 +57,27 @@ body {
     border-right: 1px solid #333;
 }
 
-.nav-inner a:hover {
+.navbar a:hover {
     background: #f5a400;
     color: #000;
 }
 
-/* MAIN WRAPPER */
-.wrapper {
-    width: 960px;
-    margin: auto;
-    padding: 10px 0;
+/* CONTENT */
+.content {
     display: flex;
     gap: 10px;
+    padding: 10px;
 }
 
-/* LEFT CONTENT */
 .main {
-    width: 660px;
+    width: 650px;
 }
 
-/* SIDEBAR */
 .sidebar {
-    width: 290px;
+    width: 280px;
 }
 
-/* BOX STYLE */
+/* BOX */
 .box {
     background: #141414;
     border: 1px solid #333;
@@ -103,12 +97,12 @@ body {
     padding: 8px;
 }
 
-/* PLAY AREA */
+/* PLAY BOX */
 .play-box {
-    background: #0f0f0f;
     border: 2px solid #f5a400;
     text-align: center;
     padding: 15px;
+    background: #0f0f0f;
 }
 
 .play-box h2 {
@@ -117,7 +111,6 @@ body {
 }
 
 .play-box a {
-    display: inline-block;
     background: #f5a400;
     color: #000;
     padding: 8px 20px;
@@ -132,11 +125,6 @@ body {
 /* LINKS */
 a {
     color: #f5a400;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
 }
 
 ul {
@@ -145,85 +133,81 @@ ul {
 
 /* FOOTER */
 .footer {
-    width: 960px;
-    margin: 15px auto;
+    border-top: 1px solid #333;
+    padding: 10px;
     text-align: center;
     font-size: 10px;
     color: #777;
-    border-top: 1px solid #333;
-    padding-top: 10px;
 }
 </style>
 </head>
 
 <body>
 
-<div class="header">
-    <div class="header-inner">
+<div class="site-frame">
+
+    <div class="header">
         <div class="logo">EVIL SAUCEFY10 WIKI</div>
     </div>
-</div>
 
-<div class="navbar">
-    <div class="nav-inner">
+    <div class="navbar">
         <a href="#">HOME</a>
         <a href="#">CHARACTERS</a>
         <a href="#">MUSIC</a>
         <a href="#">MISC</a>
     </div>
-</div>
 
-<div class="wrapper">
+    <div class="content">
 
-    <div class="main">
+        <div class="main">
 
-        <div class="box play-box">
-            <h2>PLAY THE GAME</h2>
-            <a href="COLOQUE_SEU_LINK_AQUI" target="_blank">
-                ROBLOX GAME LINK
-            </a>
-        </div>
-
-        <div class="box">
-            <div class="box-title">About Evil Saucefy10</div>
-            <div class="box-body">
-                <p>
-                    This is the official wiki for Evil Saucefy10 by AzureWraths00.
-                    The game is based on the Roblox developer Saucefy10,
-                    creator of Outlaws of Robloxia and Die of Death.
-                </p>
+            <div class="box play-box">
+                <h2>PLAY THE GAME</h2>
+                <a href="COLOQUE_SEU_LINK_AQUI" target="_blank">
+                    ROBLOX GAME LINK
+                </a>
             </div>
+
+            <div class="box">
+                <div class="box-title">About Evil Saucefy10</div>
+                <div class="box-body">
+                    <p>
+                        This is the official wiki for Evil Saucefy10 by AzureWraths00.
+                        The game is based on the Roblox developer Saucefy10,
+                        creator of Outlaws of Robloxia and Die of Death.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-title">Latest Updates</div>
+                <div class="box-body">
+                    <ul>
+                        <li>No updates yet.</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
-        <div class="box">
-            <div class="box-title">Latest Updates</div>
-            <div class="box-body">
-                <ul>
-                    <li>No updates yet.</li>
-                </ul>
+        <div class="sidebar">
+            <div class="box">
+                <div class="box-title">Navigation</div>
+                <div class="box-body">
+                    <p>> <a href="#">Main Page</a></p>
+                    <p>> <a href="#">Recent Changes</a></p>
+                    <p>> <a href="#">Random Character</a></p>
+                </div>
             </div>
         </div>
 
     </div>
 
-    <div class="sidebar">
-
-        <div class="box">
-            <div class="box-title">Navigation</div>
-            <div class="box-body">
-                <p>> <a href="#">Main Page</a></p>
-                <p>> <a href="#">Recent Changes</a></p>
-                <p>> <a href="#">Random Character</a></p>
-            </div>
-        </div>
-
+    <div class="footer">
+        It's evil! <br>
+        © Evil Saucefy10 Wiki
     </div>
 
-</div>
-
-<div class="footer">
-    It's evil! <br>
-    © Evil Saucefy10 Wiki
 </div>
 
 </body>
