@@ -98,29 +98,41 @@ body {
     padding: 8px;
 }
 
-.play-box {
-    background: #0f0f0f;
+.play-banner {
+    position: relative;
+    height: 230px;
+    background:
+        linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.85)),
+        url("images/playbanner.jpg") center / cover no-repeat;
     border: 2px solid #f7b733;
-    text-align: center;
-    padding: 15px;
 }
 
-.play-box h2 {
-    font-size: 16px;
-    margin-bottom: 10px;
+.play-banner-text {
+    position: absolute;
+    top: 12px;
+    left: 14px;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial Black, Verdana, sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000;
 }
 
-.play-box a {
-    display: inline-block;
-    background: #f7b733;
-    color: #000;
-    padding: 8px 20px;
+.play-banner-button {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background: #1fa33c;
+    color: #fff;
+    padding: 10px 18px;
+    font-size: 14px;
     font-weight: bold;
     text-decoration: none;
+    border: 2px solid #000;
 }
 
-.play-box a:hover {
-    background: #ffd266;
+.play-banner-button:hover {
+    background: #28c34a;
 }
 
 a {
@@ -163,9 +175,9 @@ ul {
 
         <div class="main">
 
-            <div class="box play-box">
-                <h2>PLAY THE GAME</h2>
-                <a href="#" target="_blank">ROBLOX GAME LINK</a>
+            <div class="box play-banner">
+                <div class="play-banner-text">PLAY THE GAME NOW!</div>
+                <a class="play-banner-button" href="#" target="_blank">▶ PLAY TODAY</a>
             </div>
 
             <div class="box">
