@@ -64,6 +64,51 @@ body {
     color: #000;
     text-shadow: none;
 }
+
+.content {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.main {
+    width: 650px;
+}
+
+.sidebar {
+    width: 280px;
+}
+
+.box {
+    background: #141414;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.box-title {
+    background: #202020;
+    padding: 5px 8px;
+    font-weight: bold;
+    color: #fff;
+    border-bottom: 1px solid #333;
+    text-transform: uppercase;
+}
+
+.box-body {
+    padding: 8px;
+}
+
+a {
+    color: #f7b733;
+}
+
+.footer {
+    border-top: 1px solid #333;
+    padding: 10px;
+    text-align: center;
+    font-size: 10px;
+    color: #777;
+}
 </style>
 </head>
 
@@ -82,8 +127,81 @@ body {
         <a href="#">MISC</a>
     </div>
 
+    <div class="content">
+
+        <div class="main">
+
+            <!-- KILLERS -->
+            <div class="box">
+                <div class="box-title">KILLERS</div>
+                <div class="box-body" style="text-align:center;">
+
+                    <div style="
+                        width:140px;
+                        height:200px;
+                        margin:0 auto 6px;
+                        background:#000 url('images/evilsaucefy.png') center / cover no-repeat;
+                        border:1px solid #333;
+                    "></div>
+
+                    <strong>Evil Saucefy</strong>
+
+                </div>
+            </div>
+
+            <!-- SURVIVORS -->
+            <div class="box">
+                <div class="box-title">SURVIVORS</div>
+                <div class="box-body">
+
+                    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+
+                        <div style="text-align:center;">
+                            <div style="width:120px;height:180px;background:#000;border:1px solid #333;margin-bottom:4px;"></div>
+                            <strong>KotseAnak</strong>
+                        </div>
+
+                        <div style="text-align:center;">
+                            <div style="width:120px;height:180px;background:#000;border:1px solid #333;margin-bottom:4px;"></div>
+                            <strong>ConductorTuna</strong>
+                        </div>
+
+                        <div style="text-align:center;">
+                            <div style="width:120px;height:180px;background:#000;border:1px solid #333;margin-bottom:4px;"></div>
+                            <strong>Dzmerok</strong>
+                        </div>
+
+                        <div style="text-align:center;">
+                            <div style="width:120px;height:180px;background:#000;border:1px solid #333;margin-bottom:4px;"></div>
+                            <strong>RebelChipmunk</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="sidebar">
+            <div class="box">
+                <div class="box-title">Navigation</div>
+                <div class="box-body">
+                    <p>> <a href="#">Main Page</a></p>
+                    <p>> <a href="#">Recent Changes</a></p>
+                    <p>> <a href="#">Random Character</a></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        It's evil!<br>
+        © Evil Saucefy10 Wiki
+    </div>
+
 </div>
 
 </body>
 </html>
-
