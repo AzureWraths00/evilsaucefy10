@@ -166,7 +166,7 @@ ul {
 
     <div class="navbar">
         <a href="#">HOME</a>
-        <a href="#">CHARACTERS</a>
+        <a href="/character">CHARACTERS</a>
         <a href="#">MUSIC</a>
         <a href="#">MISC</a>
     </div>
@@ -226,8 +226,23 @@ ul {
 const hoverSound = document.getElementById("hoverSound")
 const clickSound = document.getElementById("clickSound")
 
+let audioUnlocked = false
+
+function unlockAudio() {
+    if (audioUnlocked) return
+    hoverSound.play().then(() => {
+        hoverSound.pause()
+        hoverSound.currentTime = 0
+        audioUnlocked = true
+    }).catch(() => {})
+    document.removeEventListener("click", unlockAudio)
+}
+
+document.addEventListener("click", unlockAudio)
+
 document.querySelectorAll("a").forEach(e => {
     e.addEventListener("mouseenter", () => {
+        if (!audioUnlocked) return
         hoverSound.currentTime = 0
         hoverSound.play()
     })
@@ -237,6 +252,7 @@ document.querySelectorAll("a").forEach(e => {
     })
 })
 </script>
+
 
 </body>
 </html>
