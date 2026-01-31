@@ -143,8 +143,8 @@ ul {
 
 <body>
 
-<audio id="hoverSound" src="sounds/buttonrollover.mp3" preload="auto"></audio>
-<audio id="clickSound" src="sounds/buttonclick.mp3" preload="auto"></audio>
+<audio id="hoverSound" src="sounds/buttonrollover.wav" preload="auto"></audio>
+<audio id="clickSound" src="sounds/buttonclick.wav" preload="auto"></audio>
 
 <div class="site-frame">
 
@@ -165,9 +165,7 @@ ul {
 
             <div class="box play-box">
                 <h2>PLAY THE GAME</h2>
-                <a href="COLOQUE_SEU_LINK_AQUI" target="_blank">
-                    ROBLOX GAME LINK
-                </a>
+                <a href="#" target="_blank">ROBLOX GAME LINK</a>
             </div>
 
             <div class="box">
@@ -216,12 +214,12 @@ ul {
 const hoverSound = document.getElementById("hoverSound")
 const clickSound = document.getElementById("clickSound")
 
-document.querySelectorAll("a").forEach(el => {
-    el.addEventListener("mouseenter", () => {
+document.querySelectorAll("a").forEach(e => {
+    e.addEventListener("mouseenter", () => {
         hoverSound.currentTime = 0
         hoverSound.play()
     })
-    el.addEventListener("click", () => {
+    e.addEventListener("click", () => {
         clickSound.currentTime = 0
         clickSound.play()
     })
