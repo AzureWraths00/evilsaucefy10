@@ -100,6 +100,7 @@ body {
 
 a {
     color: #f7b733;
+    text-decoration: none;
 }
 
 /* IMAGENS CORRIGIDAS */
@@ -107,6 +108,8 @@ a {
     background: #000;
     border: 1px solid #333;
     overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .char-box img {
@@ -116,6 +119,10 @@ a {
     display: block;
 }
 
+.char-box:hover {
+    transform: scale(1.05);
+}
+
 .killer-box {
     width: 140px;
     height: 200px;
@@ -123,6 +130,12 @@ a {
 }
 
 .survivor-box {
+    width: 120px;
+    height: 180px;
+    margin-bottom: 4px;
+}
+
+.upcoming-box {
     width: 120px;
     height: 180px;
     margin-bottom: 4px;
@@ -161,13 +174,12 @@ a {
             <div class="box">
                 <div class="box-title">KILLERS</div>
                 <div class="box-body" style="text-align:center;">
-
-                    <div class="char-box killer-box">
-                        <img src="images/Saucefy.png" alt="">
-                    </div>
-
+                    <a href="#">
+                        <div class="char-box killer-box">
+                            <img src="images/Saucefy.png" alt="">
+                        </div>
+                    </a>
                     <strong>Evil Saucefy</strong>
-
                 </div>
             </div>
 
@@ -175,39 +187,64 @@ a {
             <div class="box">
                 <div class="box-title">SURVIVORS</div>
                 <div class="box-body">
-
                     <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
 
                         <div style="text-align:center;">
-                            <div class="char-box survivor-box">
-                                <img src="images/kotserender.png" alt="">
-                            </div>
+                            <a href="#">
+                                <div class="char-box survivor-box">
+                                    <img src="images/kotserender.png" alt="">
+                                </div>
+                            </a>
                             <strong>KotseAnak</strong>
                         </div>
 
                         <div style="text-align:center;">
-                            <div class="char-box survivor-box">
-                                <img src="images/TunaRender.png" alt="">
-                            </div>
+                            <a href="#">
+                                <div class="char-box survivor-box">
+                                    <img src="images/TunaRender.png" alt="">
+                                </div>
+                            </a>
                             <strong>ConductorTuna</strong>
                         </div>
 
                         <div style="text-align:center;">
-                            <div class="char-box survivor-box">
-                                <img src="images/Dzrender.png" alt="">
-                            </div>
+                            <a href="#">
+                                <div class="char-box survivor-box">
+                                    <img src="images/Dzrender.png" alt="">
+                                </div>
+                            </a>
                             <strong>Dzmerok</strong>
                         </div>
 
                         <div style="text-align:center;">
-                            <div class="char-box survivor-box">
-                                <img src="images/RebelRender.png" alt="">
-                            </div>
+                            <a href="#">
+                                <div class="char-box survivor-box">
+                                    <img src="images/RebelRender.png" alt="">
+                                </div>
+                            </a>
                             <strong>RebelChipmunk</strong>
                         </div>
 
                     </div>
+                </div>
+            </div>
 
+            <!-- UPCOMING -->
+            <div class="box">
+                <div class="box-title">UPCOMING</div>
+                <div class="box-body">
+                    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+
+                        <div style="text-align:center;">
+                            <a href="#">
+                                <div class="char-box upcoming-box">
+                                    <img src="images/bonuspad.png" alt="">
+                                </div>
+                            </a>
+                            <strong>Bonus Pad</strong>
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
