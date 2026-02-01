@@ -68,12 +68,13 @@ body {
 }
 
 .right-panel {
-    width: 420px;
+    width: 440px;
 }
 
 .box {
     background: #141414;
     border: 1px solid #333;
+    margin-bottom: 10px;
 }
 
 .box-title {
@@ -89,7 +90,6 @@ body {
     padding: 10px;
 }
 
-/* RENDER AREA */
 .render-tabs {
     display: flex;
     gap: 8px;
@@ -126,6 +126,14 @@ body {
     object-fit: contain;
 }
 
+.box-body ul {
+    padding-left: 16px;
+}
+
+.box-body li {
+    margin-bottom: 4px;
+}
+
 .footer {
     border-top: 1px solid #333;
     padding: 10px;
@@ -152,8 +160,19 @@ body {
     <div class="content-wrapper">
 
         <div class="right-panel">
+
+            <!-- OVERVIEW -->
             <div class="box">
-                <div class="box-title">Evil Saucefy</div>
+                <div class="box-title">Overview</div>
+                <div class="box-body">
+                    Evil Saucefy is a killer character.  
+                    Other stuff here.
+                </div>
+            </div>
+
+            <!-- APPEARANCE -->
+            <div class="box">
+                <div class="box-title">Appearance</div>
                 <div class="box-body">
 
                     <div class="render-tabs">
@@ -169,6 +188,19 @@ body {
 
                 </div>
             </div>
+
+            <!-- ABILITIES -->
+            <div class="box">
+                <div class="box-title">Abilities</div>
+                <div class="box-body">
+                    <ul>
+                        <li>Ability 1</li>
+                        <li>Ability 2</li>
+                        <li>Ability 3</li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
 
     </div>
