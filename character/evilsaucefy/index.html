@@ -67,15 +67,8 @@ body {
     padding: 15px;
 }
 
-/* LEFT */
-.left-panel {
-    width: 480px;
-}
-
-/* RIGHT */
-.right-panel {
-    width: 420px;
-}
+.left-panel { width: 480px; }
+.right-panel { width: 420px; }
 
 .box {
     background: #141414;
@@ -92,26 +85,65 @@ body {
     text-transform: uppercase;
 }
 
-.box-body {
-    padding: 10px;
-}
+.box-body { padding: 10px; }
 
-.box-body ul {
-    padding-left: 16px;
-}
-
-.box-body li {
-    margin-bottom: 6px;
-}
-
-/* SOUND */
 .sound-topic {
     font-weight: bold;
     margin-bottom: 6px;
     display: block;
 }
 
-/* APPEARANCE */
+/* CUSTOM AUDIO PLAYER */
+
+.audio-player {
+    background: #0b0b0b;
+    border: 2px solid #3a3a3a;
+    padding: 6px;
+    font-size: 10px;
+}
+
+.audio-title {
+    border-bottom: 1px solid #333;
+    padding-bottom: 4px;
+    margin-bottom: 6px;
+}
+
+.audio-controls {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.play-btn {
+    width: 22px;
+    height: 22px;
+    background: #111;
+    border: 1px solid #444;
+    color: #f7b733;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.play-btn:hover {
+    background: #f7b733;
+    color: #000;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 8px;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background: #f7b733;
+}
+
 .render-tabs {
     display: flex;
     gap: 8px;
@@ -167,32 +199,18 @@ body {
     </div>
 
     <div class="navbar">
-        <a href="/evilsaucefy10">HOME</a>
-        <a href="/evilsaucefy10/character">CHARACTERS</a>
+        <a href="#">HOME</a>
+        <a href="#">CHARACTERS</a>
     </div>
 
     <div class="content">
 
-        <!-- LEFT -->
         <div class="left-panel">
 
             <div class="box">
                 <div class="box-title">Overview</div>
                 <div class="box-body">
-                    Evil Saucefy is a killer character.<br>
-                    Appearance is described in text here.<br>
-                    No images in this section.
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="box-title">Abilities</div>
-                <div class="box-body">
-                    <ul>
-                        <li>Ability 1</li>
-                        <li>Ability 2</li>
-                        <li>Ability 3</li>
-                    </ul>
+                    Evil Saucefy is a killer character.
                 </div>
             </div>
 
@@ -202,20 +220,21 @@ body {
 
                     <span class="sound-topic">Slash Sounds</span>
 
-                    <ul>
-                        <li>
-                            <audio controls>
-                                <source src="sounds/Slash.ogg" type="audio/mpeg">
-                            </audio>
-                        </li>
-                    </ul>
+                    <div class="audio-player" data-src="sounds/Slash.ogg">
+                        <div class="audio-title">Slash.ogg</div>
+                        <div class="audio-controls">
+                            <button class="play-btn">▶</button>
+                            <div class="progress-bar">
+                                <div class="progress"></div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
 
         </div>
 
-        <!-- RIGHT -->
         <div class="right-panel">
 
             <div class="box">
@@ -230,7 +249,7 @@ body {
                     </div>
 
                     <div class="render-frame">
-                        <img id="renderImage" src="images/render_new.png" alt="">
+                        <img id="renderImage" src="images/render_new.png">
                     </div>
 
                 </div>
@@ -240,9 +259,7 @@ body {
 
     </div>
 
-    <div class="footer">
-        © Evil Saucefy10 Wiki
-    </div>
+    <div class="footer">© Evil Saucefy10 Wiki</div>
 
 </div>
 
@@ -250,6 +267,38 @@ body {
 function setRender(src) {
     document.getElementById("renderImage").src = src
 }
+
+document.querySelectorAll(".audio-player").forEach(player => {
+    const audio = new Audio(player.dataset.src)
+    const playBtn = player.querySelector(".play-btn")
+    const progressBar = player.querySelector(".progress-bar")
+    const progress = player.querySelector(".progress")
+
+    playBtn.onclick = () => {
+        if (audio.paused) {
+            audio.play()
+            playBtn.textContent = "❚❚"
+        } else {
+            audio.pause()
+            playBtn.textContent = "▶"
+        }
+    }
+
+    audio.ontimeupdate = () => {
+        if (!audio.duration) return
+        progress.style.width = (audio.currentTime / audio.duration) * 100 + "%"
+    }
+
+    progressBar.onclick = e => {
+        const rect = progressBar.getBoundingClientRect()
+        audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration
+    }
+
+    audio.onended = () => {
+        playBtn.textContent = "▶"
+        progress.style.width = "0%"
+    }
+})
 </script>
 
 </body>
