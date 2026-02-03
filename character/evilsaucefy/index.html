@@ -101,7 +101,14 @@ body {
 }
 
 .box-body li {
-    margin-bottom: 4px;
+    margin-bottom: 6px;
+}
+
+/* SOUND */
+.sound-topic {
+    font-weight: bold;
+    margin-bottom: 6px;
+    display: block;
 }
 
 /* APPEARANCE */
@@ -166,7 +173,7 @@ body {
 
     <div class="content">
 
-        <!-- LEFT SIDE -->
+        <!-- LEFT -->
         <div class="left-panel">
 
             <div class="box">
@@ -192,15 +199,29 @@ body {
             <div class="box">
                 <div class="box-title">Sounds</div>
                 <div class="box-body">
+
+                    <span class="sound-topic">Slash Sounds</span>
+
                     <ul>
-                        <!-- sounds here -->
+                        <li>
+                            <audio controls>
+                                <source src="sounds/slash_1.mp3" type="audio/mpeg">
+                            </audio>
+                        </li>
+
+                        <li>
+                            <audio controls>
+                                <source src="sounds/slash_2.mp3" type="audio/mpeg">
+                            </audio>
+                        </li>
                     </ul>
+
                 </div>
             </div>
 
         </div>
 
-        <!-- RIGHT SIDE -->
+        <!-- RIGHT -->
         <div class="right-panel">
 
             <div class="box">
