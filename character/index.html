@@ -91,6 +91,19 @@ body {
 
 .box-body { padding: 8px; }
 
+.box-warning .box-title {
+    background: linear-gradient(#f7b733, #e08b00);
+    color: #000;
+    border-bottom: 1px solid #8a5a00;
+    text-shadow: none;
+}
+
+.box-warning .box-body {
+    background: #1a1405;
+    color: #f7d774;
+    font-weight: bold;
+}
+
 a {
     color: #f7b733;
     text-decoration: none;
@@ -148,6 +161,13 @@ a {
 
         <div class="main">
 
+            <div class="box box-warning">
+                <div class="box-title">WARNING</div>
+                <div class="box-body">
+                    This page is incomplete! Expect more updates to it!
+                </div>
+            </div>
+
             <div class="box">
                 <div class="box-title">KILLERS</div>
                 <div class="box-body" style="text-align:center;">
@@ -166,73 +186,33 @@ a {
                     <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
 
                         <div style="text-align:center;">
-                            <a href="#">
-                                <div class="char-box survivor-box">
-                                    <img src="images/kotserender.png" alt="">
-                                </div>
-                            </a>
+                            <div class="char-box survivor-box">
+                                <img src="images/kotserender.png" alt="">
+                            </div>
                             <strong>KotseAnak</strong>
                         </div>
 
                         <div style="text-align:center;">
-                            <a href="#">
-                                <div class="char-box survivor-box">
-                                    <img src="images/TunaRender.png" alt="">
-                                </div>
-                            </a>
+                            <div class="char-box survivor-box">
+                                <img src="images/TunaRender.png" alt="">
+                            </div>
                             <strong>ConductorTuna</strong>
                         </div>
 
                         <div style="text-align:center;">
-                            <a href="#">
-                                <div class="char-box survivor-box">
-                                    <img src="images/Dzrender.png" alt="">
-                                </div>
-                            </a>
+                            <div class="char-box survivor-box">
+                                <img src="images/Dzrender.png" alt="">
+                            </div>
                             <strong>Dzmerok</strong>
                         </div>
 
                         <div style="text-align:center;">
-                            <a href="#">
-                                <div class="char-box survivor-box">
-                                    <img src="images/RebelRender.png" alt="">
-                                </div>
-                            </a>
+                            <div class="char-box survivor-box">
+                                <img src="images/RebelRender.png" alt="">
+                            </div>
                             <strong>RebelChipmunk</strong>
                         </div>
 
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="box-title">UPCOMING</div>
-                <div class="box-body">
-                    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-                        <div style="text-align:center;">
-                            <a href="#">
-                                <div class="char-box upcoming-box">
-                                    <img src="images/unknwon.png" alt="">
-                                </div>
-                            </a>
-                            <strong>niisf</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="box-title">SCRAPPED</div>
-                <div class="box-body">
-                    <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
-                        <div style="text-align:center;">
-                            <a href="#">
-                                <div class="char-box upcoming-box">
-                                    <img src="images/unknwon.png" alt="">
-                                </div>
-                            </a>
-                            <strong>Bonus Pad</strong>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -258,40 +238,6 @@ a {
     </div>
 
 </div>
-
-<audio id="hoverSound" src="sounds/buttonrollover.wav" preload="auto"></audio>
-<audio id="clickSound" src="sounds/buttonclick.wav" preload="auto"></audio>
-
-<script>
-const hoverSound = document.getElementById("hoverSound")
-const clickSound = document.getElementById("clickSound")
-
-let audioUnlocked = false
-
-function unlockAudio() {
-    if (audioUnlocked) return
-    hoverSound.play().then(() => {
-        hoverSound.pause()
-        hoverSound.currentTime = 0
-        audioUnlocked = true
-    }).catch(() => {})
-    document.removeEventListener("click", unlockAudio)
-}
-
-document.addEventListener("click", unlockAudio)
-
-document.querySelectorAll("a").forEach(e => {
-    e.addEventListener("mouseenter", () => {
-        if (!audioUnlocked) return
-        hoverSound.currentTime = 0
-        hoverSound.play()
-    })
-    e.addEventListener("click", () => {
-        clickSound.currentTime = 0
-        clickSound.play()
-    })
-})
-</script>
 
 </body>
 </html>
