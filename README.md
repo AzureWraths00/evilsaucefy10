@@ -1,4 +1,3 @@
-# evil saucefy10 wiki
+# Text with flames "Evil Saucefy10"
 
-this lowkey the source code for website of the wiki
-im sorry if the code is bad
+Soo uhh, I made this for fun only, I know only a little bit of HTML, but it's fine I guess
